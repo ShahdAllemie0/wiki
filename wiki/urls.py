@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from pages import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('pages/list/',views.List ,name='page-list'),
+    path('paged/detail/<int:page_id>/',views.Detail ,name='page-detail'),
 ]
+
+
+# Let's do something exciting! Create a model method with the name get_absolute_url for the Page model.
+# Sounds unfamiliar? Look through the Django Extra workshop for model methods or just google it! 😉
